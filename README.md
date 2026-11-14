@@ -1,19 +1,65 @@
-# Minimal CKKS demo
+## Getting Started
 
-Start from this folder (first run downloads and builds SEAL):
+Follow the steps below to set up, build, and run the Minimal CKKS Demo.
 
-# 1. Give execution permissions
-chmod +x run.sh setup.sh
+### Prerequisites
+- Ubuntu/Linux environment
+- CMake and a C++ compiler
+- Git
 
-# 2. Remove previous macOS build files
-rm -rf build
-rm -rf .deps/seal-build
+### 1. Make the Scripts Executable
 
-# 3. Install and build Microsoft SEAL dependencies
+```bash
+chmod +x setup.sh run.sh
+```
+
+### 2. Clean Previous Build Files
+
+Remove any existing build files to ensure a fresh setup.
+
+```bash
+rm -rf build .deps/seal-build
+```
+
+### 3. Set Up Dependencies
+
+Run the setup script to download and build the Microsoft SEAL library.
+
+```bash
 ./setup.sh
+```
 
-# 4. Build and run the project
+### 4. Build and Run the Application
+
+```bash
 ./run.sh
+```
+
+### 5. Access the Demo
+
+Once the application starts, open the following URL in your browser:
+
+**http://127.0.0.1:8094**
+
+---
+
+## Example
+
+Try the following input vectors:
+
+```text
+A = [1.5, 2, -3]
+B = [4, -1, 0.5]
+```
+
+**Expected Results:**
+
+| Operation | Result |
+|---|---|
+| Element-wise Sum | `[5.5, 1, -2.5]` |
+| Element-wise Product | `[6, -2, -1.5]` |
+
+*Note: Results are approximate due to the inherent precision characteristics of CKKS homomorphic encryption.*
 
 Open **http://127.0.0.1:8094**. 
 
