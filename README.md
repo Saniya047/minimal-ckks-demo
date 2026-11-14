@@ -63,9 +63,6 @@ B = [4, -1, 0.5]
 
 Open **http://127.0.0.1:8094**. 
 
-Example: A = `1.5, 2, -3`, B = `4, -1, 0.5`.
-Sum ≈ `[5.5, 1, -2.5]`; element-wise product ≈ `[6, -2, -1.5]`.
-
 ## Flow and code
 
 1. `static/dashboard.mjs` reads the form. Comments explaining the retained input/form/request/display functions are preserved and clarified from your original file.
