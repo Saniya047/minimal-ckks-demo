@@ -31,9 +31,12 @@ int main() {
         // Real homomorphic arithmetic: no encode, encrypt, or decrypt calls.
         Ciphertext sum, product;
         evaluator.add(a, b, sum);
+        std::cerr << "[SERVER · main.cpp → main] evaluator.add() completed.\n";
         evaluator.multiply(a, b, product);
+        std::cerr << "[SERVER · main.cpp → main] evaluator.multiply() completed.\n";
         evaluator.relinearize_inplace(product, relin_keys);
         evaluator.rescale_to_next_inplace(product); // Scale near 2^40.
+        std::cerr << "[SERVER · main.cpp → main] evaluator.relinearize_inplace() and rescale_to_next_inplace() completed.\n";
 
         // Return encrypted answers; only the browser can decrypt them.
         save_frame(sum);

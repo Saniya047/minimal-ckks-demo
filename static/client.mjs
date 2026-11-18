@@ -14,10 +14,12 @@ export function createClient(seal) {
   const decryptor = seal.Decryptor(context, secretKey);
 
   function encryptVector(vector) {
+    console.info('[BROWSER · client.mjs → encryptVector] Calling encoder.encode() locally.');
     const plain = encoder.encode(Float64Array.from(vector), 2**40);
     let cipher;
     try {
       cipher = encryptor.encrypt(plain);
+      console.info('[BROWSER · client.mjs → encryptVector] encryptor.encrypt() completed. Ciphertext ready.');
       return cipher.save(seal.ComprModeType.none); // Base64-serialized ciphertext.
     } finally { cipher?.delete(); plain.delete(); }
   }
@@ -28,6 +30,7 @@ export function createClient(seal) {
     try {
       cipher.load(context, serialized);
       plain = decryptor.decrypt(cipher);
+      console.info('[BROWSER · client.mjs → decryptVector] decryptor.decrypt() completed locally using the browser-held key.');
       const values = Array.from(encoder.decode(plain)).slice(0, length);
       if (!values.every(Number.isFinite)) throw Error('Invalid decrypted result.');
       return values;

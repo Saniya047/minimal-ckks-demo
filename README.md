@@ -1,67 +1,46 @@
-## Getting Started
+# Minimal CKKS demo
 
-Follow the steps below to set up, build, and run the Minimal CKKS Demo.
+## macOS
 
-### Prerequisites
-- Ubuntu/Linux environment
-- CMake and a C++ compiler
-- Git
-
-### 1. Make the Scripts Executable
+Install Apple's command-line tools once:
 
 ```bash
-chmod +x setup.sh run.sh
+xcode-select --install
 ```
 
-### 2. Clean Previous Build Files
-
-Remove any existing build files to ensure a fresh setup.
+With Homebrew installed, install the remaining tools:
 
 ```bash
-rm -rf build .deps/seal-build
+brew install cmake git python
 ```
 
-### 3. Set Up Dependencies
-
-Run the setup script to download and build the Microsoft SEAL library.
+## Linux (Ubuntu / Debian)
 
 ```bash
-./setup.sh
+sudo apt update
+sudo apt install -y build-essential cmake git python3
 ```
 
-### 4. Build and Run the Application
+CMake 3.20 or newer is required (`cmake --version`). Other Linux distributions need the equivalent packages.
+
+## Run on either system
+
+From the downloaded or cloned project directory:
 
 ```bash
-./run.sh
+bash run.sh
 ```
 
-### 5. Access the Demo
+First launch downloads Microsoft SEAL 3.6.5 and builds it inside `.deps/`, then builds the evaluator and starts Python. Internet access is needed for that initial download. No sibling project folders, npm packages, or pip packages are needed.
 
-Once the application starts, open the following URL in your browser:
+Open **http://127.0.0.1:8094**. Keep the terminal open to see server messages; stop it with **Ctrl+C**. If the port is already occupied, stop your previous server before restarting. For a proxy, bypass `localhost` and `127.0.0.1`.
 
-**http://127.0.0.1:8094**
+Example: A = `1.5, 2, -3`, B = `4, -1, 0.5`.
+Sum ≈ `[5.5, 1, -2.5]`; element-wise product ≈ `[6, -2, -1.5]`.
 
----
+Do not transfer `build/` or `.deps/` between computers: these contain machine-specific build files. They are ignored by Git and recreated locally.
 
-## Example
-
-Try the following input vectors:
-
-```text
-A = [1.5, 2, -3]
-B = [4, -1, 0.5]
-```
-
-**Expected Results:**
-
-| Operation | Result |
-|---|---|
-| Element-wise Sum | `[5.5, 1, -2.5]` |
-| Element-wise Product | `[6, -2, -1.5]` |
-
-*Note: Results are approximate due to the inherent precision characteristics of CKKS homomorphic encryption.*
-
-Open **http://127.0.0.1:8094**. 
+macOS builds have been exercised locally. Linux commands are provided but Linux execution has not been verified in this environment.
 
 ## Flow and code
 

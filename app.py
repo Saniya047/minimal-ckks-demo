@@ -59,7 +59,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header('Cache-Control', 'no-store')
         self.send_header('X-Content-Type-Options', 'nosniff')
         self.send_header('Referrer-Policy', 'no-referrer')
-        self.send_header('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'")
+        self.send_header('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self'; connect-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'")
         self.end_headers()
         self.wfile.write(body)
 
@@ -72,6 +72,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         if self.path != '/calculate':
             return self.reply(404, {'error': 'Not found'})
+        print('[SERVER · app.py → Handler.do_POST] POST /calculate received.', flush=True)
         try:
             size = int(self.headers.get('Content-Length', 0))
             if not 0 < size <= MAX_BODY:
@@ -89,11 +90,15 @@ class Handler(BaseHTTPRequestHandler):
         if not GATE.acquire(blocking=False):
             return self.reply(503, {'error': 'Evaluator busy. Try again.'})
         try:
+            print('\n[SERVER · app.py → Handler.do_POST] Request validated: cipher_a, cipher_b, relin_keys.', flush=True)
+            print('[SERVER · app.py → subprocess.run] Calling build/ckks_demo with encrypted binary objects.', flush=True)
             completed = subprocess.run([str(ROOT / 'build/ckks_demo')], input=wire,
                                        stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=30)
+            print(completed.stderr.decode(errors='replace').strip(), flush=True)
             if completed.returncode:
                 return self.reply(400, {'error': 'Invalid encrypted objects or incompatible parameters. No plaintext fallback.'})
             summed, product = unpack_frames(completed.stdout)
+            print('[SERVER · app.py → Handler.reply] Returning HTTP 200 with sum_cipher and product_cipher.', flush=True)
             self.reply(200, {'sum_cipher': base64.b64encode(summed).decode(),
                              'product_cipher': base64.b64encode(product).decode()})
         except subprocess.TimeoutExpired:
@@ -104,5 +109,5 @@ class Handler(BaseHTTPRequestHandler):
             GATE.release()
 
 if __name__ == '__main__':
-    print('Browser-side CKKS: http://127.0.0.1:8094', flush=True)
+    print('SERVER SIDE — keep this terminal visible during the demonstration.\nUSER SIDE — open http://127.0.0.1:8094 in your browser.', flush=True)
     ThreadingHTTPServer(('127.0.0.1', 8094), Handler).serve_forever()

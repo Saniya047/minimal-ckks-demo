@@ -7,7 +7,7 @@ DEPS_DIR="$PWD/.deps"
 SOURCE_DIR="$DEPS_DIR/SEAL"
 INSTALL_DIR="$DEPS_DIR/install"
 
-if [ -f "$INSTALL_DIR/lib/cmake/SEAL/SEALConfig.cmake" ] || [ -f "$INSTALL_DIR/lib64/cmake/SEAL/SEALConfig.cmake" ]; then
+if [ -f "$INSTALL_DIR/lib/cmake/SEAL-3.6/SEALConfig.cmake" ] || [ -f "$INSTALL_DIR/lib64/cmake/SEAL-3.6/SEALConfig.cmake" ]; then
   echo "Microsoft SEAL already installed in $INSTALL_DIR"
   exit 0
 fi
@@ -19,6 +19,7 @@ fi
 cmake -S "$SOURCE_DIR" -B "$DEPS_DIR/seal-build" \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_INSTALL_PREFIX="$INSTALL_DIR" \
+  -DCMAKE_INSTALL_LIBDIR=lib \
   -DSEAL_BUILD_DEPS=OFF \
   -DSEAL_BUILD_EXAMPLES=OFF \
   -DSEAL_BUILD_TESTS=OFF \

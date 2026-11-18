@@ -26,11 +26,13 @@ $('form').onsubmit = async event => {
 
     // POST sends only encrypted vectors and a relinearization key to /calculate.
     $('status').textContent = 'Server is calculating on ciphertexts…';
+    console.info('[BROWSER · dashboard.mjs → form.onsubmit] Sending POST /calculate. Fields:', Object.keys(payload));
     const response = await fetch('/calculate', {
       method: 'POST', headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(payload)
     });
     const answer = await response.json();
+    console.info('[BROWSER · dashboard.mjs → form.onsubmit] Server response received. HTTP status:', response.status, 'Fields:', Object.keys(answer));
     if (!response.ok) throw Error(answer.error || 'Encrypted calculation failed.');
 
     // Decrypt the server's encrypted answers locally using the browser's key.
