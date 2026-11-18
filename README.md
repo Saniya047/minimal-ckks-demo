@@ -53,9 +53,6 @@ Other Linux distributions can use their equivalent package managers to install t
 Example: A = `1.5, 2, -3`, B = `4, -1, 0.5`.
 Sum ≈ `[5.5, 1, -2.5]`; element-wise product ≈ `[6, -2, -1.5]`.
 
-Do not transfer `build/` or `.deps/` between computers: these contain machine-specific build files. They are ignored by Git and recreated locally.
-
-macOS builds have been exercised locally. Linux commands are provided but Linux execution has not been verified in this environment.
 
 ## Flow and code
 
