@@ -1,6 +1,6 @@
 # Minimal CKKS demo
 
-## Linux (Ubuntu / Debian)
+## Linux (Ubuntu)
 
 ### Prerequisites
 
