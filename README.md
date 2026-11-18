@@ -1,39 +1,54 @@
 # Minimal CKKS demo
 
-## macOS
-
-Install Apple's command-line tools once:
-
-```bash
-xcode-select --install
-```
-
-With Homebrew installed, install the remaining tools:
-
-```bash
-brew install cmake git python
-```
-
 ## Linux (Ubuntu / Debian)
+
+### Prerequisites
+
+Install the required system dependencies:
 
 ```bash
 sudo apt update
 sudo apt install -y build-essential cmake git python3
 ```
 
-CMake 3.20 or newer is required (`cmake --version`). Other Linux distributions need the equivalent packages.
+Ensure CMake 3.20 or newer is installed:
 
-## Run on either system
+```bash
+cmake --version
+```
 
-From the downloaded or cloned project directory:
+### Run the application
+
+Clone the repository and navigate to the project directory:
+
+```bash
+git clone https://github.com/Saniya047/minimal-ckks-demo.git
+cd minimal-ckks-demo
+```
+
+Start the application:
 
 ```bash
 bash run.sh
 ```
 
-First launch downloads Microsoft SEAL 3.6.5 and builds it inside `.deps/`, then builds the evaluator and starts Python. Internet access is needed for that initial download. No sibling project folders, npm packages, or pip packages are needed.
+On the first launch, the script automatically:
+- Downloads Microsoft SEAL 3.6.5 into `.deps/`.
+- Builds and installs SEAL locally.
+- Compiles the CKKS evaluator using CMake.
+- Starts the Python application.
 
-Open **http://127.0.0.1:8094**. Keep the terminal open to see server messages; stop it with **Ctrl+C**. If the port is already occupied, stop your previous server before restarting. For a proxy, bypass `localhost` and `127.0.0.1`.
+**No manual SEAL installation, separate setup script, npm packages, or pip packages are required.**
+
+Once the server starts, open:
+
+**http://127.0.0.1:8094**
+
+Keep the terminal open while using the application to view server logs. Press `Ctrl+C` to stop the server.
+
+**Note:** An internet connection is required for the initial SEAL download. Subsequent launches reuse the local installation. If port `8094` is already occupied, stop the previous server before restarting. If using a proxy, bypass `localhost` and `127.0.0.1`.
+
+Other Linux distributions can use their equivalent package managers to install the required dependencies.
 
 Example: A = `1.5, 2, -3`, B = `4, -1, 0.5`.
 Sum ≈ `[5.5, 1, -2.5]`; element-wise product ≈ `[6, -2, -1.5]`.
