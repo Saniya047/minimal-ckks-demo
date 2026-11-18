@@ -1112,3 +1112,151 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/EnableCXX17.cmake:28 (check_cxx_source_compiles)"
+      - "CMakeLists.txt:68 (include)"
+    directories:
+      source: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-fpGUJ9"
+      binary: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-fpGUJ9"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/SEAL/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "USE_STD_FOR_EACH_N"
+      cached: true
+      stdout: |
+        Change Dir: '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-fpGUJ9'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_b298a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_b298a.dir/build.make CMakeFiles/cmTC_b298a.dir/build
+        gmake[1]: Entering directory '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-fpGUJ9'
+        Building CXX object CMakeFiles/cmTC_b298a.dir/src.cxx.o
+        /usr/bin/c++ -DUSE_STD_FOR_EACH_N  -O0 -std=c++17 -fPIE -o CMakeFiles/cmTC_b298a.dir/src.cxx.o -c "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-fpGUJ9/src.cxx"
+        Linking CXX executable cmTC_b298a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b298a.dir/link.txt --verbose=1
+        /usr/bin/c++   -O0 -std=c++17 CMakeFiles/cmTC_b298a.dir/src.cxx.o -o cmTC_b298a 
+        gmake[1]: Leaving directory '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-fpGUJ9'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/EnableCXX17.cmake:28 (check_cxx_source_compiles)"
+      - "CMakeLists.txt:68 (include)"
+    directories:
+      source: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-59lxYI"
+      binary: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-59lxYI"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/SEAL/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "USE_STD_FOR_EACH_N"
+      cached: true
+      stdout: |
+        Change Dir: '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-59lxYI'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_fb908/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_fb908.dir/build.make CMakeFiles/cmTC_fb908.dir/build
+        gmake[1]: Entering directory '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-59lxYI'
+        Building CXX object CMakeFiles/cmTC_fb908.dir/src.cxx.o
+        /usr/bin/c++ -DUSE_STD_FOR_EACH_N  -O0 -std=c++17 -fPIE -o CMakeFiles/cmTC_fb908.dir/src.cxx.o -c "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-59lxYI/src.cxx"
+        Linking CXX executable cmTC_fb908
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb908.dir/link.txt --verbose=1
+        /usr/bin/c++   -O0 -std=c++17 CMakeFiles/cmTC_fb908.dir/src.cxx.o -o cmTC_fb908 
+        gmake[1]: Leaving directory '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-59lxYI'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/EnableCXX17.cmake:28 (check_cxx_source_compiles)"
+      - "CMakeLists.txt:68 (include)"
+    directories:
+      source: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-1KbcnQ"
+      binary: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-1KbcnQ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/SEAL/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "USE_STD_FOR_EACH_N"
+      cached: true
+      stdout: |
+        Change Dir: '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-1KbcnQ'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f721d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f721d.dir/build.make CMakeFiles/cmTC_f721d.dir/build
+        gmake[1]: Entering directory '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-1KbcnQ'
+        Building CXX object CMakeFiles/cmTC_f721d.dir/src.cxx.o
+        /usr/bin/c++ -DUSE_STD_FOR_EACH_N  -O0 -std=c++17 -fPIE -o CMakeFiles/cmTC_f721d.dir/src.cxx.o -c "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-1KbcnQ/src.cxx"
+        Linking CXX executable cmTC_f721d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f721d.dir/link.txt --verbose=1
+        /usr/bin/c++   -O0 -std=c++17 CMakeFiles/cmTC_f721d.dir/src.cxx.o -o cmTC_f721d 
+        gmake[1]: Leaving directory '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-1KbcnQ'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "cmake/EnableCXX17.cmake:28 (check_cxx_source_compiles)"
+      - "CMakeLists.txt:68 (include)"
+    directories:
+      source: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-l3LLGk"
+      binary: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-l3LLGk"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/SEAL/cmake"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "USE_STD_FOR_EACH_N"
+      cached: true
+      stdout: |
+        Change Dir: '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-l3LLGk'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_26c2e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_26c2e.dir/build.make CMakeFiles/cmTC_26c2e.dir/build
+        gmake[1]: Entering directory '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-l3LLGk'
+        Building CXX object CMakeFiles/cmTC_26c2e.dir/src.cxx.o
+        /usr/bin/c++ -DUSE_STD_FOR_EACH_N  -O0 -std=c++17 -fPIE -o CMakeFiles/cmTC_26c2e.dir/src.cxx.o -c "/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-l3LLGk/src.cxx"
+        Linking CXX executable cmTC_26c2e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_26c2e.dir/link.txt --verbose=1
+        /usr/bin/c++   -O0 -std=c++17 CMakeFiles/cmTC_26c2e.dir/src.cxx.o -o cmTC_26c2e 
+        gmake[1]: Leaving directory '/home/saniya/Downloads/minimal_ckks_demo copy/.deps/seal-build/CMakeFiles/CMakeScratch/TryCompile-l3LLGk'
+        
+      exitCode: 0
+...
